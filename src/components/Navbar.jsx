@@ -1,50 +1,3 @@
-// import Image from 'next/image';
-// import Link from 'next/link';
-// import { FaQuestionCircle, FaBookOpen } from "react-icons/fa";
-// import { FiLogOut } from "react-icons/fi";
-
-// const Navbar = () => {
-//     return (
-//         <div className='bg-[#BADEFF] shadow-sm px-4 sm:px-8 py-3 flex flex-col sm:flex-row items-center justify-between gap-3'>
-//             {/* Logo */}
-
-//             <Link href="/">
-//                 <div className='flex items-center gap-1'>
-//                     <p className='text-lg font-semibold text-black'>English</p>
-//                     <Image
-//                         src="/assets/logo.png"
-//                         alt="logo"
-//                         width={50}
-//                         height={50}
-//                     />
-//                     <p className='font-bangla text-lg font-semibold text-black'>জানালা</p>
-//                 </div>
-//             </Link>
-
-//             {/* <div className='flex items-center gap-1'>
-//                 <p className='text-lg font-semibold text-black'>English</p>
-//                 <Image
-//                     src="/assets/logo.png"
-//                     alt="logo"
-//                     width={50}
-//                     height={50}
-//                 />
-//                 <p className='font-bangla text-lg font-semibold text-black'>জানালা</p>
-//             </div> */}
-
-//             {/* Other Buttons */}
-//             <div className='flex w-full justify-center gap-2 sm:w-auto sm:justify-end'>
-//                 <button className='btn btn-primary btn-sm sm:btn-md'><FaQuestionCircle />FAQ</button>
-//                 <button className='btn btn-primary btn-sm sm:btn-md'><FaBookOpen />Learn</button>
-//                 {/* <button className='btn btn-primary'><FiLogOut />Logout</button> */}
-//             </div>
-//         </div>
-//     );
-// };
-
-// export default Navbar;
-
-
 "use client";
 
 import Image from "next/image";
@@ -84,12 +37,12 @@ const Navbar = () => {
 
                 {/* Desktop Buttons */}
                 <div className="hidden sm:flex items-center gap-2">
-                    <button className="btn btn-primary btn-sm md:btn-md">
+                    <button className="btn btn-outline btn-primary btn-sm md:btn-md">
                         <FaQuestionCircle />
                         FAQ
                     </button>
 
-                    <button className="btn btn-primary btn-sm md:btn-md">
+                    <button className="btn btn-outline btn-primary btn-sm md:btn-md">
                         <FaBookOpen />
                         Learn
                     </button>
