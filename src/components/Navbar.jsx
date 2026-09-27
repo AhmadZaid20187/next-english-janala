@@ -1,44 +1,131 @@
-import Image from 'next/image';
-import Link from 'next/link';
+// import Image from 'next/image';
+// import Link from 'next/link';
+// import { FaQuestionCircle, FaBookOpen } from "react-icons/fa";
+// import { FiLogOut } from "react-icons/fi";
+
+// const Navbar = () => {
+//     return (
+//         <div className='bg-[#BADEFF] shadow-sm px-4 sm:px-8 py-3 flex flex-col sm:flex-row items-center justify-between gap-3'>
+//             {/* Logo */}
+
+//             <Link href="/">
+//                 <div className='flex items-center gap-1'>
+//                     <p className='text-lg font-semibold text-black'>English</p>
+//                     <Image
+//                         src="/assets/logo.png"
+//                         alt="logo"
+//                         width={50}
+//                         height={50}
+//                     />
+//                     <p className='font-bangla text-lg font-semibold text-black'>জানালা</p>
+//                 </div>
+//             </Link>
+
+//             {/* <div className='flex items-center gap-1'>
+//                 <p className='text-lg font-semibold text-black'>English</p>
+//                 <Image
+//                     src="/assets/logo.png"
+//                     alt="logo"
+//                     width={50}
+//                     height={50}
+//                 />
+//                 <p className='font-bangla text-lg font-semibold text-black'>জানালা</p>
+//             </div> */}
+
+//             {/* Other Buttons */}
+//             <div className='flex w-full justify-center gap-2 sm:w-auto sm:justify-end'>
+//                 <button className='btn btn-primary btn-sm sm:btn-md'><FaQuestionCircle />FAQ</button>
+//                 <button className='btn btn-primary btn-sm sm:btn-md'><FaBookOpen />Learn</button>
+//                 {/* <button className='btn btn-primary'><FiLogOut />Logout</button> */}
+//             </div>
+//         </div>
+//     );
+// };
+
+// export default Navbar;
+
+
+"use client";
+
+import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
 import { FaQuestionCircle, FaBookOpen } from "react-icons/fa";
-import { FiLogOut } from "react-icons/fi";
+import { FiMenu, FiX } from "react-icons/fi";
 
 const Navbar = () => {
+    const [isOpen, setIsOpen] = useState(false);
+
     return (
-        <div className='bg-[#BADEFF] shadow-sm px-8 py-3 flex justify-between'>
-            {/* Logo */}
+        <nav className="bg-[#BADEFF] shadow-sm px-4 sm:px-8 py-3">
 
-            <Link href="/">
-                <div className='flex items-center gap-1'>
-                    <p className='text-lg font-semibold text-black'>English</p>
-                    <Image
-                        src="/assets/logo.png"
-                        alt="logo"
-                        width={50}
-                        height={50}
-                    />
-                    <p className='font-bangla text-lg font-semibold text-black'>জানালা</p>
+            {/* Main Navbar */}
+            <div className="flex items-center justify-between">
+
+                {/* Logo */}
+                <Link href="/">
+                    <div className="flex items-center gap-1">
+                        <p className="text-lg font-semibold text-black">
+                            English
+                        </p>
+
+                        <Image
+                            src="/assets/logo.png"
+                            alt="English Janala logo"
+                            width={50}
+                            height={50}
+                        />
+
+                        <p className="font-bangla text-lg font-semibold text-black">
+                            জানালা
+                        </p>
+                    </div>
+                </Link>
+
+                {/* Desktop Buttons */}
+                <div className="hidden sm:flex items-center gap-2">
+                    <button className="btn btn-primary btn-sm md:btn-md">
+                        <FaQuestionCircle />
+                        FAQ
+                    </button>
+
+                    <button className="btn btn-primary btn-sm md:btn-md">
+                        <FaBookOpen />
+                        Learn
+                    </button>
                 </div>
-            </Link>
 
-            {/* <div className='flex items-center gap-1'>
-                <p className='text-lg font-semibold text-black'>English</p>
-                <Image
-                    src="/assets/logo.png"
-                    alt="logo"
-                    width={50}
-                    height={50}
-                />
-                <p className='font-bangla text-lg font-semibold text-black'>জানালা</p>
-            </div> */}
-
-            {/* Other Buttons */}
-            <div className='space-x-3'>
-                <button className='btn btn-primary'><FaQuestionCircle />FAQ</button>
-                <button className='btn btn-primary'><FaBookOpen />Learn</button>
-                <button className='btn btn-primary'><FiLogOut />Logout</button>
+                {/* Mobile Menu Button */}
+                <button
+                    onClick={() => setIsOpen(!isOpen)}
+                    className="btn btn-square btn-ghost sm:hidden"
+                    aria-label="Toggle menu"
+                >
+                    {isOpen ? (
+                        <FiX size={24} />
+                    ) : (
+                        <FiMenu size={24} />
+                    )}
+                </button>
             </div>
-        </div>
+
+            {/* Mobile Dropdown Menu */}
+            {isOpen && (
+                <div className="mt-3 flex flex-col gap-2 border-t border-blue-200 pt-3 sm:hidden">
+
+                    <button className="btn btn-primary w-full">
+                        <FaQuestionCircle />
+                        FAQ
+                    </button>
+
+                    <button className="btn btn-primary w-full">
+                        <FaBookOpen />
+                        Learn
+                    </button>
+
+                </div>
+            )}
+        </nav>
     );
 };
 
