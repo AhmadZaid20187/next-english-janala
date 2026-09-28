@@ -1,5 +1,6 @@
 import Accordion from "@/components/Accordion";
 import Banner from "@/components/Banner";
+import Footer from "@/components/Footer";
 import Lesson from "@/components/Lessons/Lesson";
 // import Navbar from "@/components/Navbar";
 // import WordContainer from "@/components/WordContainer";
@@ -11,6 +12,7 @@ export default function Home() {
       <Banner />
       <Lesson />
       <Accordion />
+      <Footer />
     </div>
   );
 }
