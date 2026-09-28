@@ -4,7 +4,7 @@
 
 🔗 **Live Demo:** [next-english-janala.vercel.app](https://next-english-janala.vercel.app)
 
-![English Janala Screenshot](/web-pic.png)
+![English Janala Screenshot](./public/web-pic.png)
 
 ---
 
