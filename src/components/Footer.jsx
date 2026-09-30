@@ -8,7 +8,7 @@ import { PiInstagramLogoFill } from "react-icons/pi";
 
 const Footer = () => {
     return (
-        <div className='flex justify-between items-center p-20 border border-t-[#FFEBEB]'>
+        <div className='flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between px-6 py-10 sm:px-10 sm:py-12 lg:px-20 lg:py-16'>
             {/* Left Side */}
             <div>
                 <Link href="/">
